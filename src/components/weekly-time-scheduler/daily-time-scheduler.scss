@@ -1,0 +1,126 @@
+.daily-scheduler {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  .label {
+    width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .spacer {
+    width: 10px;
+  }
+  .schedule {
+    width: 1200px;
+    height: 50px;
+
+    position: relative;
+
+    .dot-line {
+      display: flex;
+      position: absolute;
+      top: 23px;
+      left: -2px;
+      .dot {
+        width: 1px;
+        height: 1px;
+        border: 1px solid rgb(186, 186, 186);
+      }
+      .dot-left {
+        margin-right: 22px;
+      }
+      .dot-middle {
+        margin-right: 22px;
+      }
+
+    }
+
+    .ghost {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      width: 1px;
+      height: 1px;
+      .circle {
+        cursor: pointer;
+        position: absolute;
+        left: -7px;
+        top: -7px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 255, 0.25);
+      }
+      .label {
+        position: relative;
+        z-index: 2;
+        top: 10px;
+        width: 70px;
+        left: -35px;
+        white-space: nowrap;
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+      }
+      
+    }
+
+    .marker {
+      position: absolute;
+      z-index: 1;
+      top: 25px;
+      left: 25px;
+      width: 1px;
+      height: 1px;
+      .circle {
+        position: absolute;
+        cursor: grab;
+        left: -7px;
+        top: -7px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+      }
+      .label {
+        position: relative;
+        top: 10px;
+        width: 70px;
+        left: -35px;
+        white-space: nowrap;
+        text-align: center;
+      }
+      
+    }
+
+    .bar {
+      
+      position: absolute;
+      z-index: 0;
+      top: 20px;
+      background-color: blue;
+      height: 10px;
+      
+      .label {
+        text-align: center;
+        position: absolute;
+        top: 14px;
+        left: -13px;
+        white-space: nowrap;
+        font-size: x-small;
+      }
+    }
+  }
+
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+  }
+
+}

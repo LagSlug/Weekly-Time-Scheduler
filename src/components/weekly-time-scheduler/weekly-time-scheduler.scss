@@ -1,0 +1,49 @@
+.weekly-scheduler {
+  
+  width: 1300px;
+  .header {
+    display: inline-flex;
+    width: 1300px;
+
+    .spacer {
+      flex-basis: 100px;
+    }
+
+    .times {
+      position: relative;
+      height: 15px;
+      white-space: nowrap;
+      .time-12-am {
+        position: absolute;
+        left: -10px;
+      }
+      .time-4-am {
+        position: absolute;
+        left: 180px;        
+      }
+
+      .time-8-am {
+        position: absolute;
+        left: 380px;        
+      }
+      .time-12-pm {
+        position: absolute;
+        left: 575px;        
+      }
+      .time-4-pm {
+        position: absolute;
+        left: 780px;        
+      }
+      .time-8-pm {
+        position: absolute;
+        left: 980px;        
+      }
+      .time-12-am-last {
+        position: absolute;
+        left: 1175px;        
+      }
+    }
+  }
+
+  
+}
