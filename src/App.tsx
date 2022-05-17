@@ -27,9 +27,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        Weekly Time Scheduler
+        <h2>Weekly Time Scheduler</h2>
       </header>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', paddingTop: 20 }}>
         <WeeklyTimeScheduler value={value} onChange={handleChange} />
       </div>
     </div>

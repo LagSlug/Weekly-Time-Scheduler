@@ -2,6 +2,7 @@
   "name": "weekly-time-scheduler",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lagslug.github.io/weekly-time-scheduler/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
@@ -20,9 +21,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "react-build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run react-build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash.intersection": "^4.4.7"
+    "@types/lodash.intersection": "^4.4.7",
+    "gh-pages": "^4.0.0"
   }
 }
