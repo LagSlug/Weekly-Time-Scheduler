@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/weekly-time-scheduler/static/css/main.dd300273.css",
+    "main.js": "/weekly-time-scheduler/static/js/main.f7559b08.js",
+    "index.html": "/weekly-time-scheduler/index.html",
+    "main.dd300273.css.map": "/weekly-time-scheduler/static/css/main.dd300273.css.map",
+    "main.f7559b08.js.map": "/weekly-time-scheduler/static/js/main.f7559b08.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd300273.css",
+    "static/js/main.f7559b08.js"
+  ]
+}
