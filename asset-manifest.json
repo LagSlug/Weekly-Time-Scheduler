@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Weekly-Time-Scheduler/static/css/main.f335b3b1.css",
-    "main.js": "/Weekly-Time-Scheduler/static/js/main.5a1fd48c.js",
+    "main.css": "/Weekly-Time-Scheduler/static/css/main.7b2b6f43.css",
+    "main.js": "/Weekly-Time-Scheduler/static/js/main.fe74be31.js",
     "index.html": "/Weekly-Time-Scheduler/index.html",
-    "main.f335b3b1.css.map": "/Weekly-Time-Scheduler/static/css/main.f335b3b1.css.map",
-    "main.5a1fd48c.js.map": "/Weekly-Time-Scheduler/static/js/main.5a1fd48c.js.map"
+    "main.7b2b6f43.css.map": "/Weekly-Time-Scheduler/static/css/main.7b2b6f43.css.map",
+    "main.fe74be31.js.map": "/Weekly-Time-Scheduler/static/js/main.fe74be31.js.map"
   },
   "entrypoints": [
-    "static/css/main.f335b3b1.css",
-    "static/js/main.5a1fd48c.js"
+    "static/css/main.7b2b6f43.css",
+    "static/js/main.fe74be31.js"
   ]
 }
