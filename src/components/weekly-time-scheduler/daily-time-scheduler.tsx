@@ -2,13 +2,23 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import './daily-time-scheduler.scss'
 import times from './times';
 
-export type Times = [number, number][];
-type Props = {
-  label: string | false; // false hides the label
-  value?: Times;
-  onChange?: (times: Times) => void; 
-}
+export type OnChange = (times: Times) => void;
+export type ClickInfo = {
+  span: [number, number] | null,
+  spanIndex: number,
+  time: string,
+  ref: React.RefObject<HTMLDivElement>
+  minutes: number,
 
+}
+export type OnClick = (e: React.MouseEvent<HTMLDivElement>, info: ClickInfo) => void;
+export type Times = [number, number][];
+export type Props = {
+  label: string | false; // false hides the label
+  value: Times;
+  onChange?: OnChange;
+  onClick?: OnClick;
+}
 
 export default function DailyScheduler(props: Props) {
   const scheduleRef = useRef<HTMLDivElement>(null);
@@ -65,13 +75,32 @@ export default function DailyScheduler(props: Props) {
   const handleScheduleClick: React.MouseEventHandler<HTMLDivElement> = e => {
     if(!scheduleRef.current) return;
     const [time, quantizedLeft] = getTimeAtCursor(scheduleRef.current, e.clientX);
+    const info = {
+      time, quantizedLeft
+    }
+    const minutes = quantizedLeft / 25 * 30;
+    const spanIndex = props.value.findIndex(span=>{
+      if(span[0] <= minutes && minutes <= span[1]) return true;
+      return false;
+    })
+    var span: [number, number] | null = null;
+    if(spanIndex > -1) span = props.value[spanIndex];
 
+    if(props.onClick) props.onClick(e, {
+      ref: scheduleRef,
+      span: span,
+      spanIndex: spanIndex,
+      time: time,
+      minutes: minutes
+    });
   }
 
   return (
     <div className="daily-scheduler">
       {label}
-      <div ref={scheduleRef} className="schedule"
+      <div 
+        ref={scheduleRef} 
+        className="schedule"
         onClick={handleScheduleClick}  
         onMouseMove={handleMouseMove} 
         onMouseOver={()=>setShowGhost(true)} 

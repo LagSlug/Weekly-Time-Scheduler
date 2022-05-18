@@ -2,8 +2,9 @@
   "name": "weekly-time-scheduler",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lagslug.github.io/weekly-time-scheduler/",
+  "homepage": "https://lagslug.github.io/Weekly-Time-Scheduler/",
   "dependencies": {
+    "@szhsin/react-menu": "^3.0.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
