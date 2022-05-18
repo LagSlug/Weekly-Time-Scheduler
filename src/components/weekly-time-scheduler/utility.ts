@@ -10,6 +10,11 @@ export function hasIntersection(spans: [number, number][]) {
 
       if(spanA[0] <= spanB[0] && spanB[0] <= spanA[1]) return true;
       if(spanA[0] <= spanB[1] && spanB[1] <= spanA[1]) return true;
+
+      // check if spanB contains either point of spanA
+      if(spanB[0] <= spanA[0] && spanA[0] <= spanB[1]) return true;
+      if(spanB[0] <= spanA[1] && spanA[1] <= spanB[1]) return true;
+
     }
   }
 
