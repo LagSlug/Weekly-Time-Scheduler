@@ -26,6 +26,10 @@ function App() {
     saturday: [],
     sunday: [[30, 180], [300, 900]]
   });
+  
+  React.useEffect(()=>{
+    setShowMenu(false);
+  }, [value])
 
   const handleChange = (value: Value) => {
     var hasIntersection = false;
