@@ -1,4 +1,3 @@
-import { useState } from "react"
 import DailyTimeScheduler, { OnClick, OnChange, ClickInfo as DTSClickInto } from "./daily-time-scheduler"
 import './weekly-time-scheduler.scss'
 
@@ -38,7 +37,7 @@ export type ClickInfo = {
 } & DTSClickInto;
 
 export type Props = {
-  value: Value
+  value?: Value
   onChange?: (value: Value) => void;
   onClick?: (e: React.MouseEvent<HTMLDivElement>, info: ClickInfo) => void;
 }
@@ -77,13 +76,13 @@ export default function WeeklyTimeScheduler(props: Props) {
           </div>
         </div>
       </div>
-      <DailyTimeScheduler label={getLocaleDayName("Monday")} value={props.value?.monday} onChange={handleChange('monday')} onClick={handleClick('monday')}/>
-      <DailyTimeScheduler label={getLocaleDayName("Tuesday")} value={props.value?.tuesday} onChange={handleChange('tuesday')} onClick={handleClick('tuesday')} />
-      <DailyTimeScheduler label={getLocaleDayName("Wednesday")} value={props.value?.wednesday} onChange={handleChange('wednesday')} onClick={handleClick('wednesday')} />
-      <DailyTimeScheduler label={getLocaleDayName("Thursday")} value={props.value?.thursday} onChange={handleChange('thursday')} onClick={handleClick('thursday')} />
-      <DailyTimeScheduler label={getLocaleDayName("Friday")} value={props.value?.friday} onChange={handleChange('friday')} onClick={handleClick('friday')} />
-      <DailyTimeScheduler label={getLocaleDayName("Saturday")} value={props.value?.saturday} onChange={handleChange('saturday')} onClick={handleClick('saturday')} />
-      <DailyTimeScheduler label={getLocaleDayName("Sunday")} value={props.value?.sunday} onChange={handleChange('sunday')} onClick={handleClick('sunday')} />
+      <DailyTimeScheduler label={getLocaleDayName("Monday")} value={props.value?.monday || []} onChange={handleChange('monday')} onClick={handleClick('monday')}/>
+      <DailyTimeScheduler label={getLocaleDayName("Tuesday")} value={props.value?.tuesday || []} onChange={handleChange('tuesday')} onClick={handleClick('tuesday')} />
+      <DailyTimeScheduler label={getLocaleDayName("Wednesday")} value={props.value?.wednesday || []} onChange={handleChange('wednesday')} onClick={handleClick('wednesday')} />
+      <DailyTimeScheduler label={getLocaleDayName("Thursday")} value={props.value?.thursday || []} onChange={handleChange('thursday')} onClick={handleClick('thursday')} />
+      <DailyTimeScheduler label={getLocaleDayName("Friday")} value={props.value?.friday || []} onChange={handleChange('friday')} onClick={handleClick('friday')} />
+      <DailyTimeScheduler label={getLocaleDayName("Saturday")} value={props.value?.saturday || []} onChange={handleChange('saturday')} onClick={handleClick('saturday')} />
+      <DailyTimeScheduler label={getLocaleDayName("Sunday")} value={props.value?.sunday || []} onChange={handleChange('sunday')} onClick={handleClick('sunday')} />
     </div>
   )
 }
